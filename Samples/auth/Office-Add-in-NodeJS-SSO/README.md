@@ -114,8 +114,6 @@ Follow the instructions at [Register an Office Add-in that uses single sign-on (
 
 1. Open a command prompt in the root of this project.
 
-1. Run the command `npm install` to install all package dependencies.
-
 1. Run the command `npm start` to start the middle-tier server.
 
 1. You need to sideload the add-in into an Office application (Excel, Word, or PowerPoint) to test it. The instructions depend on your platform. There are links to instructions at [Sideload an Office Add-in for Testing](https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing).
@@ -130,13 +128,7 @@ Follow the instructions at [Register an Office Add-in that uses single sign-on (
 
 When you're ready to stop the middle-tier server and uninstall the add-in, follow these instructions:
 
-1. Run the following command to stop the middle-tier server.
-
-    ```console
-    npm stop
-    ```
-
-1. To uninstall or remove the add-in, see the specific sideload article you used for details.
+- To uninstall or remove the add-in, see the specific sideload article you used for details.
 
 ## Security notes
 
