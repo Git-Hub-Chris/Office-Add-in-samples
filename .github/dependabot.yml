@@ -1,0 +1,606 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Excel-custom-functions/AzureFunction/AzureFunctionProject
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Excel.JsonToOfficeTable/Excel.JsonToOfficeTable
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Excel.JsonToOfficeTable/Excel.JsonToOfficeTableWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/Excel.OfflineStorageAddin/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/Excel.OfflineStorageAddin/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/Excel.OfflineStorageAddin
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Excel.TableBindingFormatting/Excel.TableBindingFormatting
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Excel.TableBindingFormatting/Excel.TableBindingFormattingWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Office.TypeScriptAddin/Office.TypeScriptAddin
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Office.TypeScriptAddin/Office.TypeScriptAddinWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Outlook.ConsumeGraphAPI/Outlook.AddInSample
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Outlook.ConsumeGraphAPI/Outlook.AddInSampleWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Outlook.MailCRM/DXDemos.Office365.MailCRM
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Outlook.MailCRM/DXDemos.Office365
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/Outlook.RelatedData
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Outlook.UpsPackageTracker/UPSPackageTracker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Outlook.UpsPackageTracker/UPSPackageTrackerWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/Outlook.YouTubeApp/Outlook.YouTubeAppWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/completed/Cell-Analyzer
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/completed/CellAnalyzerOfficeAddin
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/completed/CellAnalyzerOfficeAddinWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/completed/CellAnalyzerRESTAPI
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/completed/CellAnalyzerSharedLibrary
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/completed/CellAnalyzerWebAddin
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/completed/CellAnalyzerWebAddinWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/VSTO-shared-code-migration/start/Cell-Analyzer
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Office-Add-in-ASPNET-SSO/Office-Add-in-ASPNET-SSO
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Office-Add-in-ASPNET-SSO/Office-Add-in-ASPNETCore-WebAPI
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET/Office-Add-in-Microsoft-Graph-ASPNET
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET/Office-Add-in-Microsoft-Graph-ASPNETWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Office-Add-in-Microsoft-Graph-React
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Office-Add-in-NodeJS-SSO/Begin
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Office-Add-in-NodeJS-SSO/Complete
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Office-Add-in-SSO-NAA/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Office-Add-in-SSO-NAA/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Office-Add-in-SSO-NAA
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET/Outlook-Add-in-Microsoft-Graph-ASPNET
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET/Outlook-Add-in-Microsoft-Graph-ASPNETWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Add-in-SSO-NAA-IE
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Add-in-SSO-NAA-Identity/API
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Add-in-SSO-NAA-Identity/SPA
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Add-in-SSO-NAA/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Add-in-SSO-NAA/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Add-in-SSO-NAA
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Add-in-SSO-events
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Outlook-Add-in-SSO/AttachmentDemo-ASPNETCore
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/auth/Outlook-Add-in-SSO/AttachmentDemo
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/auth/Outlook-Event-SSO-NAA
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/blazor-add-in/excel-blazor-add-in/excel-blazor-add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/blazor-add-in/excel-blazor-add-in/excel-blazor-sideloader
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/blazor-add-in/outlook-blazor-add-in/outlook-blazor-add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/blazor-add-in/outlook-blazor-add-in/outlook-blazor-sideloader
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/blazor-add-in/word-blazor-add-in/word-blazor-add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/blazor-add-in/word-blazor-add-in/word-blazor-sideloader
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/dynamic-dpi/VSTO Excel Addin/ExcelAddIn1
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/dynamic-dpi/VSTO OutlookAddIn/OutlookAddIn1
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/dynamic-dpi/VSTO PowerPointAddIn/PowerPointAddIn1
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/dynamic-dpi/VSTO SharedAddin/SharedModule
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/dynamic-dpi/VSTO VisioAddIn/VisioAddIn1
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/dynamic-dpi/VSTO WordAddIn/WordAddIn1
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-add-in-chart-analyze-data
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-add-in-custom-functions-using-web-workers
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-add-in-mail-merge
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-add-in-shape-dashboard
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-content-add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-copilot-agent
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-create-worksheet-from-web-site
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-data-types-explorer
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/excel-get-started-with-dev-kit
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/excel-open-in-teams/excel-open-in-teams
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/hello-world/outlook-hello-world
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/hello-world/powerpoint-hello-world/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/hello-world/word-hello-world/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/office-add-in-commands/auto-open-task-pane/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/office-add-in-commands/excel/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/office-add-in-commands/powerpoint/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/office-add-in-commands/word/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-check-item-categories/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-check-item-categories/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-check-item-categories
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-encrypt-decrypt-messages
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-set-signature
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-spam-reporting
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-verify-sensitivity-label/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-verify-sensitivity-label/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/outlook-verify-sensitivity-label
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/excel-tutorial/My Office Add-in/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/excel-tutorial/My Office Add-in/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/excel-tutorial/My Office Add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/first-run-experience-tutorial/My Office Add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/outlook-tutorial/Git the gist/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/outlook-tutorial/Git the gist/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/outlook-tutorial/Git the gist
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/powerpoint-tutorial-yo/My Office Add-in/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/powerpoint-tutorial-yo/My Office Add-in/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/powerpoint-tutorial-yo/My Office Add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/tutorials/powerpoint-tutorial/HelloWorld/HelloWorld
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/tutorials/powerpoint-tutorial/HelloWorld/HelloWorldWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/word-tutorial/My Office Add-in/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/word-tutorial/My Office Add-in/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/tutorials/word-tutorial/My Office Add-in
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/word-add-in-get-set-edit-openxml/C#/WD_OpenXML_js
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/word-add-in-get-set-edit-openxml/C#/WD_OpenXML_jsWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/word-add-in-load-and-write-open-xml/C#/LoadingAndWritingOOXML
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Samples/word-add-in-load-and-write-open-xml/C#/LoadingAndWritingOOXMLWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/word-add-label-on-open
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/word-ai-generated-content
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/word-citation-management/manifest-configurations/add-in-only
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/word-citation-management/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/word-citation-management
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/word-get-started-with-dev-kit
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /Samples/word-import-template/manifest-configurations/unified
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/Excel.MVCAddInTemplate/Excel.MVCAddInTemplate
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/Excel.MVCAddInTemplate/Excel.MVCAddInTemplateWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/Outlook.MVCAddInTemplate/Outlook.MVCAddInTemplate
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/Outlook.MVCAddInTemplate/Outlook.MVCAddInTemplateWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/PowerPoint.MVCAddInTemplate/PowerPoint.MVCAddInTemplate
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/PowerPoint.MVCAddInTemplate/PowerPoint.MVCAddInTemplateWeb
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/Word.MVCAddInTemplate/Word.MVCAddInTemplate
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: /Templates/Word.MVCAddInTemplate/Word.MVCAddInTemplateWeb
+    schedule:
+      interval: daily
