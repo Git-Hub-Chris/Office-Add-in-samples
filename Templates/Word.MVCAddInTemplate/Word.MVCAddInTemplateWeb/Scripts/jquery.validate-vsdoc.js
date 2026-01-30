@@ -1140,8 +1140,8 @@ $.extend($.validator, {
 		
 		// http://docs.jquery.com/Plugins/Validation/Methods/email
 		email: function(value, element) {
-			// simplified email validation regex to avoid catastrophic backtracking
-			return this.optional(element) || /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z]{2,})+$/i.test(value);
+			// simplified, safe email validation regex to avoid catastrophic backtracking
+			return this.optional(element) || /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i.test(value);
 		},
 	
 		// http://docs.jquery.com/Plugins/Validation/Methods/url
