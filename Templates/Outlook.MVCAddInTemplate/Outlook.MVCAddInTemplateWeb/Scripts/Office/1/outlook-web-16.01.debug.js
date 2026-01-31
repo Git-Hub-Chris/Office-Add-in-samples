@@ -4253,6 +4253,11 @@ Microsoft.Office.Common.XdmCommunicationManager=function()
 		org_parser=document.createElement("a");
 		url_parser.href=url;
 		org_parser.href=origin;
+		if(!url_parser.protocol || !url_parser.hostname || !org_parser.protocol || !org_parser.hostname)
+		{
+			delete url_parser,org_parser;
+			return res
+		}
 		res=_urlCompare(url_parser,org_parser);
 		delete url_parser,org_parser;
 		return res
