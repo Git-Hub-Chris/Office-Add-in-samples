@@ -13,7 +13,7 @@
     "dotenv": "^16.4.5",
     "express": "~4.21.1",
     "form-urlencoded": "^6.1.4",
-    "http-errors": "~2.0.0",
+    "http-errors": "~2.0.1",
     "jshint": "^2.13.6",
     "jsonwebtoken": "^9.0.2",
     "jwks-rsa": "^3.1.0",
