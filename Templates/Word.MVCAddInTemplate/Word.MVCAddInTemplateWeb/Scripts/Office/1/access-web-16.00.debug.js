@@ -3136,6 +3136,12 @@ Microsoft.Office.Common.XdmCommunicationManager = (function () {
         if (!url || !origin || !url.length || !origin.length) {
             return res;
         }
+        // Ensure that the origin is a well-formed absolute URL before using it.
+        // This prevents malformed or attacker-controlled strings from being treated as navigable URLs.
+        var originPattern = /^[a-zA-Z][a-zA-Z0-9+.-]*:\/\/\S+$/;
+        if (!originPattern.test(origin)) {
+            return res;
+        }
         var url_parser, org_parser;
         url_parser = document.createElement('a');
         org_parser = document.createElement('a');
