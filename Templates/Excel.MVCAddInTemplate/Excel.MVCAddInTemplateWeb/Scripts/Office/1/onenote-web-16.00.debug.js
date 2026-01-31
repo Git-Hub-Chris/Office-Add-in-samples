@@ -4074,6 +4074,12 @@ Microsoft.Office.Common.XdmCommunicationManager = (function () {
         if (!url || !origin || !url.length || !origin.length) {
             return res;
         }
+        // Validate that origin is a well-formed absolute URL before parsing.
+        // This prevents malformed or attacker-controlled values from being used.
+        var originPattern = /^[a-zA-Z][a-zA-Z0-9+.\-]*:\/\/[^\/\s]+/;
+        if (!originPattern.test(origin)) {
+            return res;
+        }
         var url_parser, org_parser;
         url_parser = document.createElement('a');
         org_parser = document.createElement('a');
