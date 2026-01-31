@@ -33,7 +33,7 @@
     "urijs": "^1.19.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
+    "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@types/office-js": "^1.0.396",
