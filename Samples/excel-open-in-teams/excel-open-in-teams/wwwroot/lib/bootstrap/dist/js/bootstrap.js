@@ -3090,7 +3090,12 @@
     };
 
     _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
+      if (!this.tip) {
+        var template = this.config && this.config.template ? this.config.template : '';
+        var doc = this.element && this.element.ownerDocument ? this.element.ownerDocument : document;
+        var parsed = $.parseHTML ? $.parseHTML(template, doc) : null;
+        this.tip = parsed && parsed[0] ? parsed[0] : doc.createElement('div');
+      }
       return this.tip;
     };
 
