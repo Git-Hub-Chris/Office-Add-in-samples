@@ -4066,12 +4066,38 @@ Microsoft.Office.Common.XdmCommunicationManager = (function () {
         }
     }
     ;
+    function _isValidOrigin(origin) {
+        if (typeof origin !== "string") {
+            return false;
+        }
+        origin = origin.replace(/^\s+|\s+$/g, "");
+        if (!origin.length) {
+            return false;
+        }
+        var parser = document.createElement('a');
+        try {
+            parser.href = origin;
+        }
+        catch (e) {
+            return false;
+        }
+        if (!parser.protocol || !parser.hostname) {
+            return false;
+        }
+        if (parser.protocol !== "http:" && parser.protocol !== "https:") {
+            return false;
+        }
+        return true;
+    }
     function _checkOrigin(url, origin) {
         var res = false;
         if (url === true) {
             return true;
         }
         if (!url || !origin || !url.length || !origin.length) {
+            return res;
+        }
+        if (!_isValidOrigin(origin)) {
             return res;
         }
         var url_parser, org_parser;
