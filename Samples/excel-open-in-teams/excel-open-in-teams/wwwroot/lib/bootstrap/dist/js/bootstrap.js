@@ -3090,7 +3090,22 @@
     };
 
     _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
+      if (this.tip) {
+        return this.tip;
+      }
+
+      var template = this.config && this.config.template;
+
+      // If a DOM element or jQuery object is provided, use it directly.
+      if (template && (template.nodeType || template.jquery)) {
+        this.tip = $(template)[0];
+      } else {
+        // Fall back to a safe, static default template instead of interpreting
+        // arbitrary strings as HTML.
+        var defaultTemplate = '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>';
+        this.tip = $(defaultTemplate)[0];
+      }
+
       return this.tip;
     };
 
