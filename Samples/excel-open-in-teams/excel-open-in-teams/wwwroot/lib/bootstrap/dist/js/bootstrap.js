@@ -3162,7 +3162,17 @@
         return $(this.config.container);
       }
 
-      return $(document).find(this.config.container);
+      // Treat string containers strictly as selectors; avoid interpreting HTML
+      if (typeof this.config.container === 'string') {
+        // If the string looks like HTML, fall back to body to prevent XSS via HTML injection
+        if (/^\s*</.test(this.config.container)) {
+          return document.body;
+        }
+        return $(document).find(this.config.container);
+      }
+
+      // Fallback: if an unexpected type is provided, default to body
+      return document.body;
     };
 
     _proto._getAttachment = function _getAttachment(placement) {
