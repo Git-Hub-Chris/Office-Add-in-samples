@@ -48,11 +48,11 @@
     "office-addin-dev-certs": "^1.13.3",
     "office-addin-lint": "^2.3.3",
     "office-addin-manifest": "^1.13.3",
-    "office-addin-prettier-config": "^1.2.1",
+    "office-addin-prettier-config": "^2.0.1",
     "source-map-loader": "^5.0.0",
     "typescript": "^5.9.3",
     "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4",
+    "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1"
   },
   "prettier": "office-addin-prettier-config",
