@@ -1074,7 +1074,9 @@
         return;
       }
 
-      var target = $(selector)[0];
+      // Resolve the carousel target using CSS selector semantics only,
+      // avoiding jQuery's HTML string interpretation.
+      var target = document.querySelector(selector);
 
       if (!target || !$(target).hasClass(ClassName$2.CAROUSEL)) {
         return;
