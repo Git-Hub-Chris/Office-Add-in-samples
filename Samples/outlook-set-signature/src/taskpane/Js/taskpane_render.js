@@ -84,7 +84,7 @@ function is_not_valid_text(text)
 
 function is_not_valid_email_address(email_address)
 {
-  let email_address_regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  let email_address_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return is_not_valid_text(email_address) || !(email_address_regex.test(email_address));
 }
 
