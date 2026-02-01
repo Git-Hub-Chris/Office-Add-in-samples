@@ -3089,8 +3089,31 @@
       $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
 
+    // Basic runtime sanitization for tooltip template to avoid executing arbitrary scripts
+    function sanitizeTemplate(template, defaultTemplate) {
+      if (typeof template !== 'string') {
+        return defaultTemplate;
+      }
+
+      var trimmed = template.trim().toLowerCase();
+
+      // Reject templates that include obvious script injection patterns
+      if (trimmed.indexOf('<script') !== -1 ||
+          trimmed.indexOf('javascript:') !== -1 ||
+          trimmed.indexOf('onerror=') !== -1 ||
+          trimmed.indexOf('onload=') !== -1) {
+        return defaultTemplate;
+      }
+
+      return template;
+    }
+
     _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
+      if (!this.tip) {
+        // Use the sanitized template; fall back to default if necessary
+        var safeTemplate = sanitizeTemplate(this.config.template, Default$6.template);
+        this.tip = $(safeTemplate)[0];
+      }
       return this.tip;
     };
 
