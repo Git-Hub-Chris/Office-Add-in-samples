@@ -1074,7 +1074,9 @@
         return;
       }
 
-      var target = $(selector)[0];
+      // Use document.querySelector to ensure the selector is treated strictly
+      // as a CSS selector and never as HTML, avoiding potential XSS.
+      var target = document.querySelector(selector);
 
       if (!target || !$(target).hasClass(ClassName$2.CAROUSEL)) {
         return;
