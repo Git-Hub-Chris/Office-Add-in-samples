@@ -2596,6 +2596,15 @@ Microsoft.Office.Common.XdmCommunicationManager = (function () {
     }
     ;
 
+    function _isValidOrigin(origin) {
+        if (!origin || typeof origin !== "string") {
+            return false;
+        }
+        // Require a scheme and authority and disallow paths/query/fragments.
+        var originPattern = /^[a-zA-Z][a-zA-Z0-9+.-]*:\/\/[^\/?#]+$/;
+        return originPattern.test(origin);
+    }
+
     function _checkOrigin(url, origin) {
         var res = false;
 
@@ -2603,6 +2612,9 @@ Microsoft.Office.Common.XdmCommunicationManager = (function () {
             return true;
         }
         if (!url || !origin || !url.length || !origin.length) {
+            return res;
+        }
+        if (!_isValidOrigin(origin)) {
             return res;
         }
         var url_parser, org_parser;
