@@ -3090,7 +3090,21 @@
     };
 
     _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
+      if (!this.tip) {
+        var template = this.config && this.config.template != null ? this.config.template : '';
+        template = String(template);
+        var $template = $(template);
+        var tipEl = $template.filter("." + ClassName$6.TOOLTIP)[0] || $template[0];
+
+        // Fallback to default template if no valid element was produced
+        if (!tipEl && this.constructor && this.constructor.Default && this.constructor.Default.template) {
+          var defaultTemplate = String(this.constructor.Default.template);
+          var $defaultTemplate = $(defaultTemplate);
+          tipEl = $defaultTemplate.filter("." + ClassName$6.TOOLTIP)[0] || $defaultTemplate[0];
+        }
+
+        this.tip = tipEl || null;
+      }
       return this.tip;
     };
 
