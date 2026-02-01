@@ -15,7 +15,7 @@
     "express": "~4.22.1",
     "form-urlencoded": "^6.1.4",
     "http-errors": "~2.0.0",
-    "jquery": "^3.7.1",
+    "jquery": "^4.0.0",
     "jshint": "^2.13.6",
     "jsonwebtoken": "^9.0.2",
     "morgan": "~1.10.0",
