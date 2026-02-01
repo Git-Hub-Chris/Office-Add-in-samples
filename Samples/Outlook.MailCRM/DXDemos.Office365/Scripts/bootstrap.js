@@ -534,6 +534,16 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
     this.transitioning = null
 
+    // Guard against unsafe values for the `parent` option to avoid treating
+    // user-controlled strings as HTML in the jQuery constructor.
+    if (typeof this.options.parent === 'string') {
+      // If the string looks like HTML (starts with "<" after optional whitespace),
+      // treat it as invalid instead of passing it to `$()` as HTML.
+      if (/^\s*</.test(this.options.parent)) {
+        this.options.parent = null
+      }
+    }
+
     if (this.options.parent) this.$parent = $(this.options.parent)
     if (this.options.toggle) this.toggle()
   }
