@@ -26,7 +26,7 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
-    "core-js": "^3.37.1",
+    "core-js": "^3.48.0",
     "regenerator-runtime": "^0.14.1"
   },
   "devDependencies": {
@@ -53,7 +53,7 @@
     "typescript": "^5.5.2",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.2.1"
+    "webpack-dev-server": "^5.2.3"
   },
   "prettier": "office-addin-prettier-config"
 }
