@@ -30,7 +30,7 @@
     "regenerator-runtime": "^0.14.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
+    "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.24.7",
     "@types/find-process": "1.2.0",
     "@types/office-js": "^1.0.569",
