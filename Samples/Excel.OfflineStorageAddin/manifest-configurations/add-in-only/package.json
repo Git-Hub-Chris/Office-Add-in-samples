@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-env": "^7.29.0",
     "@types/find-process": "1.2.0",
     "@types/office-js": "^1.0.569",
     "@types/office-runtime": "^1.0.35",
