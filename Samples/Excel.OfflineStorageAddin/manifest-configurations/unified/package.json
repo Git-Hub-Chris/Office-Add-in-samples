@@ -46,7 +46,7 @@
     "office-addin-cli": "^1.6.3",
     "office-addin-debugging": "^6.0.3",
     "office-addin-dev-certs": "^2.0.6",
-    "office-addin-lint": "^2.3.3",
+    "office-addin-lint": "^3.0.6",
     "office-addin-manifest": "^2.0.3",
     "office-addin-prettier-config": "^2.0.1",
     "source-map-loader": "^5.0.0",
