@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@azure/msal-browser": "^4.7.0",
-    "core-js": "^3.36.0",
+    "core-js": "^3.48.0",
     "regenerator-runtime": "^0.14.1"
   },
   "devDependencies": {
