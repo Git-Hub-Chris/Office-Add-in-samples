@@ -3091,6 +3091,25 @@
       $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
 
+    _proto._getSafeTemplate = function _getSafeTemplate() {
+      var template = this.config && this.config.template;
+
+      if (typeof template === 'string') {
+        var trimmed = template.trim();
+
+        // If the template string starts with "<", treat it as potentially unsafe HTML.
+        // Fall back to the constructor's default template if available, which is static
+        // and defined by the library, rather than using untrusted runtime data.
+        if (trimmed.charAt(0) === '<') {
+          if (this.constructor && this.constructor.Default && this.constructor.Default.template) {
+            return this.constructor.Default.template;
+          }
+        }
+      }
+
+      return template;
+    };
+
     _proto.getTipElement = function getTipElement() {
       if (!this.tip) {
         var template = this.config.template;
