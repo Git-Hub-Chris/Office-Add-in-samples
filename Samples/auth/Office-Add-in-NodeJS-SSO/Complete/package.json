@@ -7,7 +7,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.29",
+    "@types/jquery": "^3.5.33",
     "@types/office-js": "^1.0.569",
     "cookie-parser": "~1.4.7",
     "debug": "~4.3.4",
