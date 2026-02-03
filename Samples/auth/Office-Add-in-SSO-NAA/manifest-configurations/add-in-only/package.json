@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
-    "@babel/preset-typescript": "^7.24.7",
+    "@babel/preset-typescript": "^7.28.5",
     "@types/office-js": "^1.0.396",
     "@types/office-runtime": "^1.0.35",
     "acorn": "^8.15.0",
