@@ -3110,8 +3110,22 @@
 
     _proto.getTipElement = function getTipElement() {
       if (!this.tip) {
-        var safeTemplate = this._getSafeTemplate();
-        this.tip = $(safeTemplate)[0];
+        var template = this.config.template;
+
+        // If template is a DOM node or jQuery object, use it directly
+        if (template && (template.nodeType || template.jquery)) {
+          this.tip = $(template)[0];
+        } else if (typeof template === 'string') {
+
+          // If the string looks like HTML, create elements from it
+          if (template.trim().charAt(0) === '<') {
+            this.tip = $(template)[0];
+
+          // Otherwise, treat it as a selector and resolve via $.find
+          } else {
+            this.tip = $.find(template)[0];
+          }
+        }
       }
       return this.tip;
     };
