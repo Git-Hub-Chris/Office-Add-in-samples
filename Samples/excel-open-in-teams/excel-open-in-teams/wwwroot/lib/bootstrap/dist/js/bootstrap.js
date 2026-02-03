@@ -1074,7 +1074,9 @@
         return;
       }
 
-      var target = $(selector)[0];
+      // Resolve the carousel target using CSS selector semantics only,
+      // avoiding jQuery's HTML string interpretation.
+      var target = document.querySelector(selector);
 
       if (!target || !$(target).hasClass(ClassName$2.CAROUSEL)) {
         return;
@@ -3089,24 +3091,24 @@
       $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
 
-    // Basic runtime sanitization for tooltip template to avoid executing arbitrary scripts
-    function sanitizeTemplate(template, defaultTemplate) {
-      if (typeof template !== 'string') {
-        return defaultTemplate;
-      }
+    _proto._getSafeTemplate = function _getSafeTemplate() {
+      var template = this.config && this.config.template;
 
-      var trimmed = template.trim().toLowerCase();
+      if (typeof template === 'string') {
+        var trimmed = template.trim();
 
-      // Reject templates that include obvious script injection patterns
-      if (trimmed.indexOf('<script') !== -1 ||
-          trimmed.indexOf('javascript:') !== -1 ||
-          trimmed.indexOf('onerror=') !== -1 ||
-          trimmed.indexOf('onload=') !== -1) {
-        return defaultTemplate;
+        // If the template string starts with "<", treat it as potentially unsafe HTML.
+        // Fall back to the constructor's default template if available, which is static
+        // and defined by the library, rather than using untrusted runtime data.
+        if (trimmed.charAt(0) === '<') {
+          if (this.constructor && this.constructor.Default && this.constructor.Default.template) {
+            return this.constructor.Default.template;
+          }
+        }
       }
 
       return template;
-    }
+    };
 
     _proto.getTipElement = function getTipElement() {
       if (!this.tip) {
