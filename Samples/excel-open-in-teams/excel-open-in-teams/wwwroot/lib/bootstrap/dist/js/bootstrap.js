@@ -3090,22 +3090,24 @@
     };
 
     _proto.getTipElement = function getTipElement() {
-      if (this.tip) {
-        return this.tip;
+      if (!this.tip) {
+        var template = this.config.template;
+
+        // If template is a DOM node or jQuery object, use it directly
+        if (template && (template.nodeType || template.jquery)) {
+          this.tip = $(template)[0];
+        } else if (typeof template === 'string') {
+
+          // If the string looks like HTML, create elements from it
+          if (template.trim().charAt(0) === '<') {
+            this.tip = $(template)[0];
+
+          // Otherwise, treat it as a selector and resolve via $.find
+          } else {
+            this.tip = $.find(template)[0];
+          }
+        }
       }
-
-      var template = this.config && this.config.template;
-
-      // If a DOM element or jQuery object is provided, use it directly.
-      if (template && (template.nodeType || template.jquery)) {
-        this.tip = $(template)[0];
-      } else {
-        // Fall back to a safe, static default template instead of interpreting
-        // arbitrary strings as HTML.
-        var defaultTemplate = '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>';
-        this.tip = $(defaultTemplate)[0];
-      }
-
       return this.tip;
     };
 
