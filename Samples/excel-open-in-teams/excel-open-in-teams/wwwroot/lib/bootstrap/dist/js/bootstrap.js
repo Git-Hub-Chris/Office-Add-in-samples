@@ -1074,7 +1074,9 @@
         return;
       }
 
-      var target = $(selector)[0];
+      // Resolve the carousel target using CSS selector semantics only,
+      // avoiding jQuery's HTML string interpretation.
+      var target = document.querySelector(selector);
 
       if (!target || !$(target).hasClass(ClassName$2.CAROUSEL)) {
         return;
@@ -3089,8 +3091,44 @@
       $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
 
+    _proto._getSafeTemplate = function _getSafeTemplate() {
+      var template = this.config && this.config.template;
+
+      if (typeof template === 'string') {
+        var trimmed = template.trim();
+
+        // If the template string starts with "<", treat it as potentially unsafe HTML.
+        // Fall back to the constructor's default template if available, which is static
+        // and defined by the library, rather than using untrusted runtime data.
+        if (trimmed.charAt(0) === '<') {
+          if (this.constructor && this.constructor.Default && this.constructor.Default.template) {
+            return this.constructor.Default.template;
+          }
+        }
+      }
+
+      return template;
+    };
+
     _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
+      if (!this.tip) {
+        var template = this.config.template;
+
+        // If template is a DOM node or jQuery object, use it directly
+        if (template && (template.nodeType || template.jquery)) {
+          this.tip = $(template)[0];
+        } else if (typeof template === 'string') {
+
+          // If the string looks like HTML, create elements from it
+          if (template.trim().charAt(0) === '<') {
+            this.tip = $(template)[0];
+
+          // Otherwise, treat it as a selector and resolve via $.find
+          } else {
+            this.tip = $.find(template)[0];
+          }
+        }
+      }
       return this.tip;
     };
 
@@ -3162,7 +3200,17 @@
         return $(this.config.container);
       }
 
-      return $(document).find(this.config.container);
+      // Treat string containers strictly as selectors; avoid interpreting HTML
+      if (typeof this.config.container === 'string') {
+        // If the string looks like HTML, fall back to body to prevent XSS via HTML injection
+        if (/^\s*</.test(this.config.container)) {
+          return document.body;
+        }
+        return $(document).find(this.config.container);
+      }
+
+      // Fallback: if an unexpected type is provided, default to body
+      return document.body;
     };
 
     _proto._getAttachment = function _getAttachment(placement) {
