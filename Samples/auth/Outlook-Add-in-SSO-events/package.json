@@ -10,7 +10,7 @@
     "@types/office-js": "^1.0.378",
     "cookie-parser": "~1.4.6",
     "debug": "~4.3.4",
-    "dotenv": "^16.4.5",
+    "dotenv": "^17.2.3",
     "express": "~4.22.1",
     "form-urlencoded": "^6.1.4",
     "http-errors": "~2.0.0",
