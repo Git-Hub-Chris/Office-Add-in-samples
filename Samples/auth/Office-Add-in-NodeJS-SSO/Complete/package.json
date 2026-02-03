@@ -13,7 +13,7 @@
     "debug": "~4.3.4",
     "dotenv": "^17.2.3",
     "express": "~5.2.1",
-    "form-urlencoded": "^6.1.4",
+    "form-urlencoded": "^6.1.6",
     "http-errors": "~2.0.0",
     "jquery": "^4.0.0",
     "jshint": "^2.13.6",
