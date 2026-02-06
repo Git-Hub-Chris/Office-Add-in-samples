@@ -26,6 +26,6 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "office-addin-dev-certs": "1.12.2"
+    "office-addin-dev-certs": "2.0.6"
   }
 }
