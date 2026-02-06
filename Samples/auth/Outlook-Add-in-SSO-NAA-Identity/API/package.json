@@ -15,7 +15,7 @@
     "form-urlencoded": "^6.1.6",
     "http-errors": "~2.0.1",
     "jshint": "^2.13.6",
-    "jsonwebtoken": "^9.0.2",
+    "jsonwebtoken": "^9.0.3",
     "jwks-rsa": "^3.2.2",
     "lowdb": "^1.0.0",
     "morgan": "~1.10.0",
