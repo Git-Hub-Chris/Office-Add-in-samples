@@ -53,7 +53,7 @@
     "file-loader": "^6.2.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "less": "^3.9.0",
+    "less": "^4.5.1",
     "less-loader": "^10.0.1",
     "office-addin-cli": "^1.6.3",
     "office-addin-debugging": "^6.0.6",
